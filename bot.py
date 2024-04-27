@@ -22,6 +22,12 @@ async def random_pass(ctx, len_pass = 10):
     await ctx.send(ran_pass(len_pass))
 
 @bot.command()
+async def joined(ctx, member: discord.Member):
+    """Says when a member joined."""
+    await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
+
+
+@bot.command()
 async def add(ctx, left: int, right: int):
     """Adds two numbers together."""
     await ctx.send(left + right)
